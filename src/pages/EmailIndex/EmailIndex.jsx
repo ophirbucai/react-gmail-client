@@ -1,11 +1,12 @@
-import { EmailComposeBtn } from "../../cmps/EmailComposeBtn/EmailComposeBtn";
-import { EmailFolderBtn } from "../../cmps/EmailFolderBtn/EmailFolderBtn";
-import React from "react";
+import { EmailComposeBtn } from "@/cmps/EmailComposeBtn/EmailComposeBtn";
+import { EmailFolderBtn } from "@/cmps/EmailFolderBtn/EmailFolderBtn";
+import React, { useState } from "react";
 import { LucideMenu, LucideSearch } from "lucide-react";
 import { useParams, Navigate } from "react-router";
 
 export function EmailIndex() {
-    const folders= ["inbox", "starred", "sent", "drafts", "trash"];
+    const [folders]= useState(["inbox", "starred", "sent", "drafts", "trash", "custom-label"]);
+    const [emailCount] = useState({});
     const { folder: selectedFolder } = useParams();
 
     if (!folders.includes(selectedFolder)) {
@@ -23,7 +24,7 @@ export function EmailIndex() {
             <aside>
                 <EmailComposeBtn/>
                 <div className="email-folders">
-                    {folders.map(folder => <EmailFolderBtn folder={folder} />)}
+                    {folders.map(folder => <EmailFolderBtn key={folder} folder={folder} count={emailCount[folder]} />)}
                 </div>
             </aside>
             <main>

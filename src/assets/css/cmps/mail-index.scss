@@ -73,6 +73,10 @@
                 font-size: 0.9em;
                 text-shadow: vars.$shadow;
                 margin-right: auto;
+                text-transform: capitalize;
+            }
+            .email-count {
+                font-size: 0.9em;
             }
             svg {
                 filter: drop-shadow(vars.$shadow);
