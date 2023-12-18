@@ -1,0 +1,24 @@
+@use '../setup/variables' as vars;
+
+.email-search {
+  label {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    color: white;
+    padding: vars.$padding-small vars.$padding-medium;
+    gap: vars.$padding-small;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10em;
+    width: 100%;
+    font-weight: 500;
+
+    input {
+      flex: 1;
+    }
+
+    &:has(input:focus) {
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+  }
+}

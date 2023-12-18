@@ -1,0 +1,25 @@
+@use '../setup/variables' as vars;
+
+.email-index {
+    background: vars.$main-background;
+    display: grid;
+    grid-template:
+        "h h"
+        "a m";
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 16rem 1fr;
+    transition: grid vars.$duration ease-in-out;
+    .email-header {
+        grid-area: h;
+    }
+    .email-sidebar {
+        grid-area: a;
+    }
+    .email-list,
+    .email-details {
+        grid-area: m;
+    }
+    &.collapsed {
+        grid-template-columns: 4rem 1fr;
+    }
+}

@@ -1,41 +1,27 @@
-import { EmailComposeBtn } from "@/cmps/EmailComposeBtn/EmailComposeBtn";
-import { EmailFolderBtn } from "@/cmps/EmailFolderBtn/EmailFolderBtn";
 import React, { useState } from "react";
-import { LucideMenu, LucideSearch } from "lucide-react";
 import { useParams, Navigate } from "react-router";
+import { EmailSidebar } from "@/cmps/EmailSidebar.jsx";
+import { EmailHeader } from "@/cmps/EmailHeader.jsx";
+import cx from "@/utils/cx.js";
 
 export function EmailIndex() {
+    const [collapsed, setCollapsed] = useState(false);
     const [folders]= useState(["inbox", "starred", "sent", "drafts", "trash", "custom-label"]);
-    const [emailCount] = useState({});
+    const [emailCount] = useState({ inbox: 5, starred: 2, sent: 3, drafts: 1, trash: 0, "custom-label": 0 });
     const { folder: selectedFolder } = useParams();
 
     if (!folders.includes(selectedFolder)) {
         return <Navigate to="/inbox" replace />;
     }
 
+
     return (
-        <main className="container email-index">
-            <header>
-                <button className="menu-btn">
-                    <LucideMenu size="1.2rem" className="menu-icon" />
-                </button>
-                Logo
-            </header>
-            <aside>
-                <EmailComposeBtn/>
-                <div className="email-folders">
-                    {folders.map(folder => <EmailFolderBtn key={folder} folder={folder} count={emailCount[folder]} />)}
-                </div>
-            </aside>
-            <main>
-                <header>
-                    <label className="search-mail">
-                        <LucideSearch size="1.2rem" className="search-icon" />
-                        <input placeholder="Search mail" className="simple-input" />
-                    </label>
-                </header>
+        <div className={cx("container email-index", { collapsed })}>
+            <EmailHeader toggleCollapse={() => setCollapsed(!collapsed)} />
+            <EmailSidebar collapsed={collapsed} folders={folders} emailCount={emailCount} />
+            <main className="email-details">
                 <div>Email details</div>
             </main>
-        </main>
+        </div>
     );
 }

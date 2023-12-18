@@ -1,0 +1,23 @@
+@use '../setup/variables' as vars;
+
+.compose-btn {
+  color: vars.$grey-color;
+  border-radius: vars.$border-radius;
+  background-color: white;
+  display: inline-flex;
+  align-items: center;
+  padding-inline: vars.$padding-medium;
+  height: 3.2rem;
+  gap: vars.$padding-medium;
+  margin: vars.$padding-small vars.$padding-xs;
+  transition: width vars.$duration ease-in-out;
+  overflow: hidden;
+  width: 8.5rem;
+  .compose-icon {
+    display: inline-flex;
+  }
+  .compose-text {
+    font-weight: 500;
+    font-size: 0.9em;
+  }
+}

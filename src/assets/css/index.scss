@@ -4,7 +4,12 @@
 "./basics/layout";
 
 @import
-"./cmps/mail-index";
+"cmps/email-index",
+"cmps/email-sidebar",
+"cmps/email-header",
+"cmps/email-folder-btn",
+"cmps/email-compose-btn",
+"cmps/email-search";
 
 @import 
 "./setup/variables";

@@ -1,0 +1,51 @@
+@use '../setup/variables' as vars;
+
+.email-sidebar {
+  &:not(.collapsed) {
+    width: 16rem;
+  }
+  &.collapsed:not(:hover) {
+    width: 4rem;
+
+    .compose-btn {
+      width: 3.2rem;
+
+      .compose-text {
+        visibility: hidden;
+      }
+    }
+
+    .email-folders {
+      align-items: flex-start;
+      margin-inline: vars.$padding-medium;
+
+      .email-folder-btn {
+        border-radius: 10em;
+        padding: vars.$padding-small;
+        width: 2rem;
+
+        .email-folder-name {
+          display: none;
+        }
+
+        .email-count {
+          display: none;
+        }
+      }
+    }
+  }
+  &.collapsed:hover {
+    width: 16rem;
+    background: darken(vars.$main-background, 2.5%);
+    z-index: 1;
+  }
+
+  position: relative;
+
+
+  .email-folders {
+    display: flex;
+    flex-direction: column;
+    margin: vars.$padding-xs vars.$padding-small vars.$padding-xs 0;
+  }
+}
