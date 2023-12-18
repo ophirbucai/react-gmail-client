@@ -1,0 +1,35 @@
+    // Colors
+$primary-color: #4285f4;
+$secondary-color: #34a853;
+$accent-color: #fbbc05;
+$error-color: #ea4335;
+$grey-color: #5f6368;
+//$main-background: #f1f1f1;
+//$main-background: #f9f9f9;
+$main-background: #676d80;
+$main-color: white;
+
+// Fonts
+$font-family: Arial, sans-serif;
+$font-size-base: 16px;
+
+// Spacing
+$spacing-unit: 8px;
+$padding-xs: $spacing-unit * 0.7;
+$padding-small: $spacing-unit;
+$padding-medium: $spacing-unit * 2;
+$padding-large: $spacing-unit * 3;
+
+// Border
+$border-width: 1px;
+$border-radius: 16px;
+
+// Breakpoints
+$breakpoint-small: 576px;
+$breakpoint-medium: 768px;
+$breakpoint-large: 992px;
+$breakpoint-xlarge: 1200px;
+
+// Shadow
+//    $text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+$shadow: 0 2px 2px rgba(0, 0, 0, 0.2);

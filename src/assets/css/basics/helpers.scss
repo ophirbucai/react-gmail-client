@@ -1,0 +1,49 @@
+@use "../setup/variables";
+
+.primary-button {
+  @extend .rounded-button;
+  @extend .fast-transition;
+  background-color: variables.$primary-color;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  margin: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.rounded-button {
+  border-radius: 12px;
+}
+
+.primary-button:hover {
+  background-color: darken(variables.$primary-color, 10%);
+}
+
+.fast-transition {
+  transition: all 0.2s ease-in-out;
+}
+
+.slow-transition {
+  transition: all 0.5s ease-in-out;
+}
+
+.simple-input {
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: 1rem;
+  &::placeholder {
+    color: inherit;
+    opacity: 0.8;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+.container {
+  min-height: 100vh;
+}
