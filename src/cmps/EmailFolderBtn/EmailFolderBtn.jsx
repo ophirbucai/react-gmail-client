@@ -10,11 +10,11 @@ const folderIcons = {
     drafts: { icon: LucideFile },
     spam: { icon: LucideAlertOctagon },
     trash: { icon: LucideTrash2 },
-    default: { icon: LucideTag, props: { strokeWidth: 1 } },
+    default: { icon: LucideTag, props: { strokeWidth: 1.5 } },
 }
 export function EmailFolderBtn({ folder, count }) {
     let { icon, props = {} } = folderIcons[folder] || folderIcons.default;
-    props = { ...props, size: "1em", strokeWidth: 2 };
+    props = { size: "1em", strokeWidth: 2, ...props };
 
     return (
         <NavLink to={`/${folder}`} className="email-folder-btn">
